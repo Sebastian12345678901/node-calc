@@ -7,6 +7,7 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+
 let allVariables = [{}];
 
 function print(name) {
@@ -34,7 +35,7 @@ function multiply(name, value) {
         }
     })
 
-    console.log(allVariables);
+
     startStream();
 };
 
@@ -47,7 +48,7 @@ function subtract(name, value) {
         }
     })
 
-    console.log(allVariables);
+
     startStream();
 
 
@@ -76,7 +77,7 @@ function add(name, value) {
     }
 
 
-    console.log(allVariables);
+
     startStream();
 
 }
@@ -96,6 +97,7 @@ function startStream() {
 
     printRules();
 
+    // read line stream starts here
     rl.question('Input: ', (input) => {
 
         if (input.toLowerCase() === "quit") {
@@ -170,5 +172,6 @@ function startStream() {
     });
 }
 
+module.exports = allVariables;
 
 startStream();
