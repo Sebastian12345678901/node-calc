@@ -7,7 +7,7 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-
+// Store all information about Register/var here
 let allVariables = [{}];
 
 function print(name) {
@@ -30,11 +30,9 @@ function multiply(name, value) {
 
     allVariables.forEach(variable => {
         if (name == variable.name) {
-
             variable.value *= value;
         }
     })
-
 
     startStream();
 };
@@ -76,13 +74,10 @@ function add(name, value) {
         })
     }
 
-
-
     startStream();
-
 }
 
-
+//This function is only needed in my switch statement, else I can restart with startStream()
 function restartStream() {
     console.log("Wrong syntax you need an operator like add, subtract or multiply as second argument");
     startStream();
@@ -90,7 +85,7 @@ function restartStream() {
 }
 
 function startStream() {
-    //My forloop just makes a litle space
+    //My forloop just makes a litle space // just for estetics
     for (let i = 0; i < 3; i++) {
         console.log('\n');
     }
@@ -144,7 +139,6 @@ function startStream() {
             value = parseInt(args[2])
         }
 
-
         //check if the length is correct
         if (args.length === 3) {
             //If everything is correct untill this point call correct function
@@ -171,7 +165,5 @@ function startStream() {
         }
     });
 }
-
-module.exports = allVariables;
 
 startStream();
